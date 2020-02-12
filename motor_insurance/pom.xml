@@ -11,7 +11,7 @@
 	<groupId>com.motor.insurance</groupId>
 	<artifactId>motor_insurance</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>talent_student_registration_assignment</name>
+	<name>motor_insurance</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

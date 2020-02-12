@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -42,16 +44,20 @@
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<h:outputLabel>Name</h:outputLabel><span class="text-danger">*</span><span
+												<h:outputLabel for="name">Name</h:outputLabel><span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="name" label="Name" class="form-control"
-												data-validation="required" required="true" value=" " />
+												 value=" "    required="true"requiredMessage="Name is Required!" validatorMessage="Name length must be 3~12!" />
+									          	
+									          	<f:validateLength minimum="3" maximum="20" />
+									            <f:validateRegex pattern="^[a-zA-Z]+$" />
+									          	
 										</div>
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>NRC No</label> <span class="text-danger">*</span><span
+											<h:outputLabel for="nrc">NRC No</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="nrc" label="nrc" class="form-control"
@@ -61,7 +67,7 @@
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Date of Birth</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="dob">Date of Birth</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="dob" label="Date Of Birth"
@@ -74,7 +80,7 @@
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Phone Number</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="phoneNo" >Phone Number</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="phoneNo" label="Phone No"
@@ -85,7 +91,7 @@
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Address</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="address" >Address</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="address" label="Address"
@@ -96,7 +102,7 @@
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Occupation</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="occupation" >Occupation</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="occupation" label="Occupation"
@@ -107,7 +113,7 @@
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Gender</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="gender" >Gender</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:selectOneRadio id="gender" value=" " unselectable="true">
@@ -119,7 +125,7 @@
 										<div>&nbsp;</div>
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Start Date</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="startDate">Start Date</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="startDate" label="Start Date"
@@ -130,7 +136,7 @@
 										
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Sum Insurance</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="sumInsurance">Sum Insurance</h:outputLabel><span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="sumInsurance" label="Sum Insurance"
@@ -140,7 +146,7 @@
 										
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Premium</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="premium">Premium</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="premium" label="Sum Insurance"
@@ -151,10 +157,10 @@
 									
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; ">
-												<label>Coverage Type</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="coverageType">Coverage Type</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
-											<h:selectOneMenu value="" style="width: 100%; margin-top: 10px;" class="form-control">
+											<h:selectOneMenu  id="coverageType"  value="" style="width: 100%; margin-top: 10px;" class="form-control">
 												<f:selectItem itemValue=" " itemLabel="" />
 												<f:selectItem itemValue="Third Party" itemLabel="Thrid Party" />
 												<f:selectItem itemValue="Comprehensive" itemLabel="Comprehensive" />
@@ -164,10 +170,10 @@
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>How To Pay</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="paymethod" >How To Pay</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
-											<h:selectOneMenu id="coverageType" value="" style="width: 100%;" class="form-control">
+											<h:selectOneMenu id="paymethod" value="" style="width: 100%;" class="form-control">
 												<f:selectItem itemLabel=" " itemValue="" />
 												<f:selectItem itemLabel="3 months" itemValue="3 months" />
 												<f:selectItem itemLabel="6 months" itemValue="6 months" />
@@ -175,17 +181,19 @@
 											</h:selectOneMenu>
 										</div>
 										
+									               <!--     Owner Detail Detail -->
+										
                                     <!--     Vehicle Detail -->
 										<div class="col-sm-12">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<h3 style="font-size: 18px; font-weight: bold">Ploicy  Owner Details</h3>
+												<h3 style="font-size: 18px; font-weight: bold">Vehicle Details</h3>
 										        <hr style="margin: 0px;"></hr>
 											</div>
 										</div>
 										
 									   <div class="col-sm-2">
                                          <div style="overflow:auto; width:100%; margin-top:10px;">
-                                         <label>Model</label>   
+                                         <h:outputLabel for="model" >Model</h:outputLabel>   
                                          <span class="text-danger">*</span><span class="text-muted small"></span> 
                                        </div>
                                     <p:inputText id="model" label="Model" class="form-control" data-validation="required" required="true" value=" " />                      
@@ -193,7 +201,7 @@
 
 									<div class="col-sm-2">
 										<div style="overflow: auto; width: 100%; margin-top: 10px;">
-											<label>Manufacture Year</label> <span class="text-danger">*</span><span class="text-muted small"></span>
+											<h:outputLabel for="manufactureYear" >Manufacture Year</h:outputLabel> <span class="text-danger">*</span><span class="text-muted small"></span>
 											</div>
 											<p:inputText id="manufactureYear" label="Manufacture Year"
 												class="form-control" data-validation="required"
@@ -202,7 +210,7 @@
 
 										<div class="col-sm-2">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Color</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="color">Color</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="color" label="Color" class="form-control"
@@ -212,7 +220,7 @@
 
 										<div class="col-sm-2">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Chassis Number</label> <span class="text-danger">*</span><span
+												<h:outputLabel for=""chassisNo"" >Chassis Number</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="chassisNo" label="Chassis Number"
@@ -222,7 +230,7 @@
 
 										<div class="col-sm-2">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Current Value</label> <span class="text-danger">*</span><span
+													<h:outputLabel for="currentValue" >Current Value</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="currentValue" label="Current Value"
@@ -232,7 +240,7 @@
 
 										<div class="col-sm-2">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Engine CC</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="engineCC">Engine CC</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="engineCC" label="Engine CC"
@@ -242,7 +250,7 @@
 
 										<div class="col-sm-2">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Engine No</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="engineNo" >Engine No</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="engineNo" label="Engine No"
@@ -252,7 +260,7 @@
 
 										<div class="col-sm-2">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Make</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="make" >Make</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<h:selectOneMenu id="make" value="" style="width: 100%;" class="form-control">
@@ -266,7 +274,7 @@
 
 										<div class="col-sm-2">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Engine Type</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="engineType" >Engine Type</<h:outputLabel>  <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<h:selectOneMenu id="engineType" value=""
@@ -283,7 +291,7 @@
 
 										<div class="col-sm-2">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Body Type</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="bodyType" >Body Type</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<h:selectOneMenu id="bodyType" value="" style="width: 100%;"  class="form-control">
@@ -314,35 +322,35 @@
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Name</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="dname" >Name</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
-											<p:inputText id="name" label="Name" class="form-control"
+											<p:inputText id="dname" label="Name" class="form-control"
 												data-validation="required" required="true" value=" " />
 										</div>
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>NRC No</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="dnrc">NRC No</h:outputLabel > <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
-											<p:inputText id="nrc" label="nrc" class="form-control"
+											<p:inputText id="dnrc" label="nrc" class="form-control"
 												data-validation="required" required="true" value=" " />
 										</div>
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Address</label> <span class="text-danger">*</span><span
+												<h:outputLabel  for="daddress" >Address</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
-											<p:inputText id="address" label="Address"
+											<p:inputText id="daddress" label="Address"
 												class="form-control" data-validation="required"
 												required="true" value=" " />
 										</div>
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Driving Licence</label> <span class="text-danger">*</span><span
+												<h:outputLabel  for="drivingLicence" >Driving Licence</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="drivingLicence" label="Driving Lience"
@@ -352,17 +360,17 @@
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Phone Number</label> <span class="text-danger">*</span><span
+												<h:outputLabel  for="dphoneNo" >Phone Number</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
-											<p:inputText id="phoneNo" label="Phone No"
+											<p:inputText id="dphoneNo" label="Phone No"
 												class="form-control" data-validation="required"
 												required="true" value=" " />
 										</div>
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Expired Date</label> <span class="text-danger">*</span><span
+												<h:outputLabel  for="expiredDate" >Licence Expired Date</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
 											<p:inputText id="expiredDate" label="Expired Date"
@@ -381,38 +389,38 @@
 <!-- 										 Start of Benificial  -->
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Name</label> <span class="text-danger">*</span><span
+												<h:outputLabel  for="bname" >Name</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
-											<p:inputText id="name" label="Name" class="form-control"
+											<p:inputText id="bname" label="Name" class="form-control"
 												data-validation="required" required="true" value=" " />
 										</div>
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>NRC No</label> <span class="text-danger">*</span><span
+												<h:outputLabel  for="bnrc" >NRC No</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
-											<p:inputText id="nrc" label="nrc" class="form-control"
+											<p:inputText id="bnrc" label="nrc" class="form-control"
 												data-validation="required" required="true" value=" " />
 										</div>
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Phone Number</label> <span class="text-danger">*</span><span
+												<h:outputLabel  for="bphoneNo" >Phone Number</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
-											<p:inputText id="phoneNo" label="Phone No"
+											<p:inputText id="bphoneNo" label="Phone No"
 												class="form-control" data-validation="required"
 												required="true" value=" " />
 										</div>
 
 										<div class="col-sm-3">
 											<div style="overflow: auto; width: 100%; margin-top: 10px;">
-												<label>Address</label> <span class="text-danger">*</span><span
+												<h:outputLabel for="baddress">Address</h:outputLabel> <span class="text-danger">*</span><span
 													class="text-muted small"></span>
 											</div>
-											<p:inputText id="address" label="Address"
+											<p:inputText id="baddress" label="Address"
 												class="form-control" data-validation="required"
 												required="true" value=" " />
 										</div>
